@@ -9,8 +9,6 @@ class HexView(BinaryView):
     @classmethod
     def is_valid_for_data(self, data: BinaryView):
         actual_data = data.read(0, len(data)).decode('utf8')
-        print(actual_data)
-        print(type(actual_data))
         if is_srec(actual_data):
             return True
         elif is_ihex(actual_data):
