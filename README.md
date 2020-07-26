@@ -26,7 +26,7 @@ Hex files provides a simple `BinaryView` for "Hex" files. The actual parsing of 
 
 This plugin requires the following minimum version of Binary Ninja:
 
-* 2290
+* 2170
 
 
 ## License
