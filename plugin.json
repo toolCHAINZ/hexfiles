@@ -24,6 +24,6 @@
       "Windows": "`py -m pip install bincopy`",
       "Linux": "`pip install bincopy`"
    },
-   "version": "0.1.0",
+   "version": "1.0.0",
    "minimumbinaryninjaversion": 2170
 }
