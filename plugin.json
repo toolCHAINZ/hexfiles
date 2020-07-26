@@ -25,5 +25,5 @@
       "Linux": "`pip install bincopy`"
    },
    "version": "0.1.0",
-   "minimumbinaryninjaversion": 2290
+   "minimumbinaryninjaversion": 2170
 }
