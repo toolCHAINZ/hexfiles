@@ -5,7 +5,7 @@ _A simple loader for Motorola SREC, Intel HEX, and TI-TXT files._
 
 ## Description:
 
-Hex files provides a simple Binary View for "Hex" files. The actual parsing of hex files is offloaded to the excellent Python library `bincopy`. For now, this Binary View is read-only (patches will not be saved back into the source hex file). Will hopefully add that soon.
+Hex files provides a simple `BinaryView` for "Hex" files. The actual parsing of hex files is offloaded to the excellent Python library `bincopy`. For now, this `BinaryView` is read-only (patches will not be saved back into the source hex file). Will hopefully add that soon.
 
 
 ## Installation Instructions
