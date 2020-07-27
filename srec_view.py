@@ -25,4 +25,5 @@ class SRECView(BinaryView):
         for segment in self.hex_segments:
             length = len(segment.data)
             self.add_auto_segment(segment.address, length, offset, length, SegmentFlag.SegmentReadable | SegmentFlag.SegmentWritable | SegmentFlag.SegmentExecutable)
+            offset += length
         return True

@@ -1,11 +1,11 @@
-# hexfiles (v1.0.0)
+# hexfiles (v1.0.1)
 Author: **toolCHAINZ**
 
 _A simple loader for Motorola SREC, Intel HEX, and TI-TXT files._
 
 ## Description:
 
-Hex files provides a simple `BinaryView` for "Hex" files. The actual parsing of hex files is offloaded to the excellent Python library `bincopy`. For now, this `BinaryView` is read-only (patches will not be saved back into the source hex file). Will hopefully add that soon.
+Hex files provides a simple `BinaryView` for "Hex" files (Motorola SREC, Intel Hex, TI-TXT). The actual parsing of hex files is offloaded to the excellent Python library `bincopy`. For now, this `BinaryView` is read-only (patches will not be saved back into the source hex file). Will hopefully add that soon.
 
 
 ## Installation Instructions
