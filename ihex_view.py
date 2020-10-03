@@ -6,10 +6,11 @@ class IHexView(BinaryView):
     name = "Intel HEX"
     @classmethod
     def is_valid_for_data(self, data: BinaryView):
-        actual_data = data.read(0, len(data)).decode('utf8')
-        if is_ihex(actual_data):
-            return True
-        return False
+        try:
+            actual_data = data.read(0, len(data)).decode('utf8')
+            return is_ihex(actual_data)
+        except:
+            return False
 
     def __init__(self, data: BinaryView):
         actual_data = data.read(0, len(data)).decode('utf8')
