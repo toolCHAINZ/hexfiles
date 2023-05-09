@@ -7,13 +7,13 @@ class TiTxtView(BinaryView):
     @classmethod
     def is_valid_for_data(self, data: BinaryView):
         try:
-            actual_data = data.read(0, len(data)).decode('utf8')
+            actual_data = data.read(0, data.length).decode('utf8')
             return is_ti_txt(actual_data)
         except:
             return False
 
     def __init__(self, data: BinaryView):
-        actual_data = data.read(0, len(data)).decode('utf8')
+        actual_data = data.read(0, data.length).decode('utf8')
         binfile = BinFile()
         binfile.add(actual_data)
         decoded = b''.join(s.data for s in binfile.segments)
@@ -24,7 +24,7 @@ class TiTxtView(BinaryView):
     def init(self):
         offset = 0
         for segment in self.hex_segments:
-            length = len(segment.data)
+            length = segment.data.length
             self.add_auto_segment(segment.address, length, offset, length, SegmentFlag.SegmentReadable | SegmentFlag.SegmentWritable | SegmentFlag.SegmentExecutable)
             offset += length
         return True
