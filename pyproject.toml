@@ -35,6 +35,7 @@ extend-select = [
     "PTH", # flake8-use-pathlib
     "SIM", # flake8-simplify
     "TID", # flake8-tidy-imports
+    "TID252" # prefer relative imports
 ]
 extend-ignore = ["RUF005"]
 src = ["src"]

@@ -1,6 +1,7 @@
 from binaryninja import BinaryView, SegmentFlag, Settings
 from bincopy import _Segment
-from src.helper import (
+
+from .helper import (
     HexfileType,
     get_segments,
     is_valid_for_data,

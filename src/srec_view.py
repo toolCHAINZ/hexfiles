@@ -1,5 +1,5 @@
-from src.base_view import BaseView
-from src.helper import HexfileType
+from .base_view import BaseView
+from .helper import HexfileType
 
 
 class SrecView(BaseView):
