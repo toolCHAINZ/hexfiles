@@ -21,7 +21,6 @@ def is_valid_for_data(bv: BinaryView, ty: HexfileType) -> bool:
     trimmed = data
     if index != -1:
         trimmed = data[0 : index + 1]
-    print(ty)
     match ty:
         case HexfileType.TI_TXT:
             if bv.length < 2:
@@ -29,13 +28,11 @@ def is_valid_for_data(bv: BinaryView, ty: HexfileType) -> bool:
             last_two_bytes = bv.read(bv.length - 2, 2)
             if last_two_bytes != b"q\n":
                 return False
-            print("ti ", is_ti_txt(bv.read(0, bv.length).decode("utf8")))
-            return is_ti_txt(bv.read(0, bv.length).decode("utf8"))
+            return is_ti_txt(bv.read(0, bv.length).decode("utf8"))  # type: ignore
         case HexfileType.IHEX:
-            return is_ihex(trimmed.decode("utf8"))
+            return is_ihex(trimmed.decode("utf8"))  # type: ignore
         case HexfileType.SREC:
-            print("t ", trimmed, is_srec(trimmed.decode("utf8")))
-            return is_srec(trimmed.decode("utf8"))
+            return is_srec(trimmed.decode("utf8"))  # type: ignore
         # case HexfileType.VMEM:
         #    return is_verilog_vmem(trimmed.decode("utf8"))
 
@@ -43,4 +40,4 @@ def is_valid_for_data(bv: BinaryView, ty: HexfileType) -> bool:
 def get_segments(bv: BinaryView) -> list[_Segment]:
     binfile = BinFile()
     binfile.add(bv.read(0, bv.length).decode("utf8"))
-    return binfile.segments
+    return binfile.segments  # type: ignore

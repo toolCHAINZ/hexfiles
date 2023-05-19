@@ -3,7 +3,7 @@ from .src.srec_view import SrecView
 from .src.ti_txt_view import TiTxtView
 
 
-def register():
+def register() -> None:
     IHexView.register()
     TiTxtView.register()
     SrecView.register()

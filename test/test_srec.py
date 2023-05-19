@@ -9,10 +9,10 @@ def make_view() -> BinaryView:
     return binaryninja.open_view(data.encode("utf8"))
 
 
-def test_valid():
+def test_valid() -> None:
     assert is_srec(data)
 
 
-def test_make_view():
+def test_make_view() -> None:
     view = make_view()
     assert view.view_type == "SREC"

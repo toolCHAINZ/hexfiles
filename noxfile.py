@@ -16,3 +16,8 @@ def generate_requirements_txt(s: Session) -> None:
 @session(venv_backend="none")
 def test(s: Session) -> None:
     s.run("python", "-m", "pytest", "test", *s.posargs)
+
+
+@session(venv_backend="none")
+def type_check(s: Session) -> None:
+    s.run("python", "-m", "mypy", "src", "test")
