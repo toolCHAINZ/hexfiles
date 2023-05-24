@@ -1,6 +1,7 @@
 import binaryninja
 from binaryninja import BinaryView
 from bincopy import is_ti_txt
+from ..src.ti_txt_view import TiTxtView
 
 data = """\
 @F000
@@ -18,6 +19,11 @@ def make_view() -> BinaryView:
 
 def test_valid() -> None:
     assert is_ti_txt(data)
+
+
+def test_invalid() -> None:
+    bv = binaryninja.open_view(b"\xff\xff\xff\xff")
+    assert TiTxtView.is_valid_for_data(bv) is False
 
 
 def test_make_view() -> None:
