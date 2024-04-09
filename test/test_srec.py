@@ -7,7 +7,7 @@ data = "S1137AF00A0A0D0000000000000000000000000061"
 
 
 def make_view() -> BinaryView:
-    return binaryninja.open_view(data.encode("utf8"))
+    return binaryninja.load(data.encode("utf8"))
 
 
 def test_valid() -> None:
@@ -15,7 +15,7 @@ def test_valid() -> None:
 
 
 def test_invalid() -> None:
-    bv = binaryninja.open_view(b"\xff\xff\xff\xff")
+    bv = binaryninja.load(b"\xff\xff\xff\xff")
     assert SrecView.is_valid_for_data(bv) is False
 
 

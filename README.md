@@ -1,4 +1,4 @@
-# hexfiles (v1.2.0)
+# hexfiles (v1.3.0)
 Author: **toolCHAINZ**
 
 _A simple loader for Motorola SREC, Intel HEX, and TI-TXT files._

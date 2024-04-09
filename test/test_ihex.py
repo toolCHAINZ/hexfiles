@@ -7,7 +7,7 @@ data = ":10010000214601360121470136007EFE09D2190140"
 
 
 def make_view() -> BinaryView:
-    return binaryninja.open_view(data.encode("utf8"))
+    return binaryninja.load(data.encode("utf8"))
 
 
 def test_valid() -> None:
@@ -15,7 +15,7 @@ def test_valid() -> None:
 
 
 def test_invalid() -> None:
-    bv = binaryninja.open_view(b"\xff\xff\xff\xff")
+    bv = binaryninja.load(b"\xff\xff\xff\xff")
     assert IHexView.is_valid_for_data(bv) is False
 
 

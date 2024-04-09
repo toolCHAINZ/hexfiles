@@ -1,15 +1,5 @@
-argparse-addons==0.12.0 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:48b70ecd719054fcb0d7e6f25a1fecc13607aac61d446e83f47d211b4ead0d61 \
-    --hash=sha256:6322a0dcd706887e76308d23136d5b86da0eab75a282dc6496701d1210b460af
-bincopy==17.14.5 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:54d963954047d3bd23d46358dbb2bb7e49d749376850cb702a94791e0894d917 \
-    --hash=sha256:5f4de7c37a3db7adcf3edc4833a223f3356d9bf08be72ec6e431c9f0acd29f18
-humanfriendly==10.0 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:1697e1a8a8f550fd43c2865cd84542fc175a61dcb779b6fee18cf6b6ccba1477 \
-    --hash=sha256:6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc
-pyelftools==0.29 ; python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:519f38cf412f073b2d7393aa4682b0190fa901f7c3fa0bff2b82d537690c7fc1 \
-    --hash=sha256:ec761596aafa16e282a31de188737e5485552469ac63b60cfcccf22263fd24ff
-pyreadline3==3.4.1 ; sys_platform == "win32" and python_version >= "3.10" and python_version < "4.0" \
-    --hash=sha256:6f3d1f7b8a31ba32b73917cefc1f28cc660562f39aea8646d30bd6eff21f7bae \
-    --hash=sha256:b0efb6516fd4fb07b45949053826a62fa4cb353db5be2bbb4a7aa1fdd1e345fb
+argparse-addons==0.12.0 ; python_version >= "3.10" and python_version < "4.0"
+bincopy==17.14.5 ; python_version >= "3.10" and python_version < "4.0"
+humanfriendly==10.0 ; python_version >= "3.10" and python_version < "4.0"
+pyelftools==0.31 ; python_version >= "3.10" and python_version < "4.0"
+pyreadline3==3.4.1 ; sys_platform == "win32" and python_version >= "3.10" and python_version < "4.0"
