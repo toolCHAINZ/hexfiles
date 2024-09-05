@@ -1,7 +1,8 @@
 from typing import Optional
 
-from binaryninja import BinaryView, SegmentFlag, Settings
+from binaryninja import BinaryView, SegmentFlag, Settings, Platform
 from bincopy import _Segment
+import binaryninja
 
 from .helper import (
     HexfileType,
@@ -31,16 +32,31 @@ class BaseView(BinaryView):  # type: ignore
 
     def init(self) -> bool:
         offset = 0
+        platform_list = list(Platform)
+        self.platform = platform_list[binaryninja.interaction.get_choice_input("Select the platform of the loaded file: ","Platform Selection", [x.name for x in platform_list])]
         for segment in self.hex_segments:
             length = len(segment.data)
+            choice = binaryninja.interaction.get_choice_input(f"Select permission levels for the segment {hex(segment.address)}: ", f"Segment Permissions {hex(segment.address)}", ["r--", "rw-", "r-x","rwx"])
+            perms = None
+            match choice:
+                case 0:
+                    perms = SegmentFlag.SegmentReadable
+                case 1:
+                    perms = SegmentFlag.SegmentReadable | SegmentFlag.SegmentWritable
+                case 2:
+                    perms = SegmentFlag.SegmentReadable | SegmentFlag.SegmentExecutable
+                case 3:
+                    perms = SegmentFlag.SegmentReadable | SegmentFlag.SegmentWritable | SegmentFlag.SegmentExecutable
+                case _:
+                    return False
+            
+
             self.add_auto_segment(
                 segment.address,
                 length,
                 offset,
                 length,
-                SegmentFlag.SegmentReadable
-                | SegmentFlag.SegmentWritable
-                | SegmentFlag.SegmentExecutable,
+                perms
             )
             offset += length
         return True
